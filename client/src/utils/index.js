@@ -1,5 +1,6 @@
 import axios from "axios";
-const API_URL = "http://localhost:8800/api-v1";
+// const API_URL = "http://localhost:8800/api-v1";
+const API_URL = "https://trainers-hive.onrender.com/api-v1";
 
 export const API = axios.create({
   baseURL: API_URL,
@@ -13,7 +14,7 @@ export const apiRequest = async ({ url, token, data, method }) => {
       data: data,
       headers: {
         "content-type": "application/json",
-        Authorization: token ? `Bearer ${token}` : "", 
+        Authorization: token ? `Bearer ${token}` : "",
       },
     });
     return result?.data;
@@ -22,10 +23,12 @@ export const apiRequest = async ({ url, token, data, method }) => {
 
     // Handle the case when there is no response or response.data
     const err = error?.response?.data || {};
-    return { status: err.success || false, message: err.message || "API request failed" };
+    return {
+      status: err.success || false,
+      message: err.message || "API request failed",
+    };
   }
 };
-
 
 export const handleFileUpload = async (uploadFile) => {
   const formData = new FormData();
