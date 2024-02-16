@@ -11,9 +11,12 @@ import {
   UploadJob,
   UserProfile,
   FavoriteJobs,
-  Applications
+  Applications,
 } from "./pages";
 import { useSelector } from "react-redux";
+import Form from "./pages/Form";
+import Form2 from "./pages/Form2";
+import Form3 from "./pages/Form3";
 
 function Layout() {
   const { user } = useSelector((state) => state.user);
@@ -48,7 +51,6 @@ function App() {
             }
             element={<UserProfile />}
           />
-
           <Route path={"/company-profile"} element={<CompanyProfile />} />
           <Route
             path="/company-profile/:companyId"
@@ -56,13 +58,16 @@ function App() {
           />
           <Route path={"/upload-job"} element={<UploadJob />} />
           <Route path={"/job-detail/:id"} element={<JobDetail />} />
-          <Route path={"/favorite-jobs"} element={<FavoriteJobs />} /> {/* Add the route for FavoriteJobs */}
+          <Route path={"/favorite-jobs"} element={<FavoriteJobs />} />{" "}
+          {/* Add the route for FavoriteJobs */}
           <Route path={"/applications"} element={<Applications />} />
-
         </Route>
 
         <Route path="/about-us" element={<About />} />
         <Route path="/user-auth" element={<AuthPage />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/form2" element={<Form2 />} />
+        <Route path="/form3" element={<Form3 />} />
       </Routes>
       {user && <Footer />}
     </main>

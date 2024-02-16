@@ -33,4 +33,3 @@ export function Logout() {
     dispatch(userSlice.actions.logout());
   };
 }
-

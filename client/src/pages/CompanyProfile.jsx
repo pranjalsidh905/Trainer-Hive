@@ -230,7 +230,7 @@ const CompanyProfile = () => {
       setIsLoading(false);
     }
   };
-  console.log(">>>>>>>>>>>", info);
+  // console.log(">>>>>>>>>>>", info);
 
   useEffect(() => {
     fetchCompany();

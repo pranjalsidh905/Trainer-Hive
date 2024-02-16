@@ -119,28 +119,32 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <ul className="hidden lg:flex gap-10 text-base">
-            <li>
-              <Link to="/">Find Job</Link>
-            </li>
-            <li>
-              <Link to="/companies">Companies</Link>
-            </li>
-            <li>
-              <Link
-                to={
-                  user?.accountType === "seeker"
-                    ? "/applications"
-                    : "/upload-job"
-                }
-              >
-                {user?.accountType === "seeker" ? "Application" : "Upload Job"}
-              </Link>
-            </li>
-            <li>
-              <Link to="/about-us">About</Link>
-            </li>
-          </ul>
+          {user?.accountType === "seeker" && (
+            <ul className="hidden lg:flex gap-10 text-base">
+              <li>
+                <Link to="/">Find Job</Link>
+              </li>
+              <li>
+                <Link to="/favorite-jobs">Favorite Jobs</Link>
+              </li>
+              <li>
+                <Link
+                  to={
+                    user?.accountType === "seeker"
+                      ? "/applications"
+                      : "/upload-job"
+                  }
+                >
+                  {user?.accountType === "seeker"
+                    ? "Application"
+                    : "Upload Job"}
+                </Link>
+              </li>
+              <li>
+                <Link to="/about-us">About</Link>
+              </li>
+            </ul>
+          )}
 
           <div className="hidden lg:block">
             {!user?.token ? (
@@ -174,14 +178,12 @@ const Navbar = () => {
           <Link to="/" onClick={handleCloseNavbar}>
             Find Job
           </Link>
-          <Link to="/companies" onClick={handleCloseNavbar}>
-            Companies
+          <Link to="/favorite-jobs" onClick={handleCloseNavbar}>
+            Favorite Jobs
           </Link>
           <Link
             onClick={handleCloseNavbar}
-            to={
-              user?.accountType === "seeker" ? "applly-gistory" : "upload-job"
-            }
+            to={user?.accountType === "seeker" ? "Applications" : "upload-job"}
           >
             {user?.accountType === "seeker" ? "Applications" : "Upload Job"}
           </Link>

@@ -14,7 +14,7 @@ const JobDetail = () => {
 
   const { user } = useSelector((state) => state.user);
   const [job, setJob] = useState(null);
-  
+
   const [similarJobs, setSimilarJobs] = useState([]);
   const [selected, setSelected] = useState("0");
   const [isFetching, setIsFetching] = useState(false);
@@ -215,12 +215,12 @@ const JobDetail = () => {
             </div>
 
             <div className="w-full flex flex-wrap md:flex-row gap-2 items-center justify-between my-10">
-              <div className="bg-[#bdf4c8] w-40 h-16 rounded-lg flex flex-col items-center justify-center">
+              {/* <div className="bg-[#bdf4c8] w-40 h-16 rounded-lg flex flex-col items-center justify-center">
                 <span className="text-sm">Salary</span>
                 <p className="text-lg font-semibold text-gray-700">
                   $ {job?.salary}
                 </p>
-              </div>
+              </div> */}
 
               <div className="bg-[#bae5f4] w-40 h-16 rounded-lg flex flex-col items-center justify-center">
                 <span className="text-sm">Job Type</span>
@@ -229,32 +229,32 @@ const JobDetail = () => {
                 </p>
               </div>
 
-              <div className="bg-[#fed0ab] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
+              <div className="bg-[#bae5f4] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
                 <span className="text-sm">No. of Applicants</span>
                 <p className="text-lg font-semibold text-gray-700">
                   {job?.applicantsCount}
                 </p>
               </div>
 
-              <div className="bg-[#cecdff] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
+              <div className="bg-[#bae5f4] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
                 <span className="text-sm">No. of Vacancies</span>
                 <p className="text-lg font-semibold text-gray-700">
                   {job?.vacancies}
                 </p>
               </div>
-              <div className="bg-[#ffcddf] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
+              <div className="bg-[#bae5f4] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
                 <span className="text-sm">Yr. of Experience</span>
                 <p className="text-lg font-semibold text-gray-700">
                   {job?.experience}
                 </p>
               </div>
-              <div className="bg-[#ffcddf] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
+              <div className="bg-[#bae5f4] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
                 <span className="text-sm">Deadline</span>
                 <p className="text-lg font-semibold text-gray-700">
                   {job?.deadline}
                 </p>
               </div>
-              <div className="bg-[#ffcddf] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
+              <div className="bg-[#bae5f4] w-40 h-16 px-6 rounded-lg flex flex-col items-center justify-center">
                 <span className="text-sm">Language</span>
                 <p className="text-lg font-semibold text-gray-700">
                   {job?.language}
@@ -268,12 +268,12 @@ const JobDetail = () => {
                 title="Job Description"
                 containerStyles={`w-full flex items-center justify-center py-3 px-5 outline-none rounded-full text-sm ${
                   selected === "0"
-                    ? "bg-black text-white"
+                    ? "bg-blue-500 text-white"
                     : "bg-white text-black border border-gray-300"
                 }`}
               />
 
-              <CustomButton
+              {/* <CustomButton
                 onClick={() => setSelected("1")}
                 title="Company"
                 containerStyles={`w-full flex items-center justify-center  py-3 px-5 outline-none rounded-full text-sm ${
@@ -281,7 +281,7 @@ const JobDetail = () => {
                     ? "bg-black text-white"
                     : "bg-white text-black border border-gray-300"
                 }`}
-              />
+              /> */}
             </div>
 
             <div className="my-6">
@@ -302,16 +302,16 @@ const JobDetail = () => {
                 </>
               ) : (
                 <>
-                  <div className="mb-6 flex flex-col">
+                  {/* <div className="mb-6 flex flex-col">
                     <p className="text-xl text-blue-600 font-semibold">
                       {job?.company?.name}
                     </p>
                     <span className="text-base">{job?.company?.location}</span>
                     <span className="text-sm">{job?.company?.email}</span>
-                  </div>
+                  </div> */}
 
-                  <p className="text-xl font-semibold">About Company</p>
-                  <span>{job?.company?.about}</span>
+                  {/* <p className="text-xl font-semibold">About Company</p> */}
+                  {/* <span>{job?.company?.about}</span> */}
                 </>
               )}
             </div>
